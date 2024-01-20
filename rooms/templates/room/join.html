@@ -1,0 +1,38 @@
+{% extends 'app1/base.html' %}
+
+{% block title %}
+ Rooms||
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col text-center">
+            <!-- Centered title -->
+            <h1 class="my-4">{{rooms.name}}</h1>
+
+        </div>
+    </div>
+</div>
+    <div class="container pt-3 my-3 ">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card style=width:400px text-dark ">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ rooms.name }}</h2>
+                        <p class="card-text ">{{rooms.descp}}</p>
+                    </div>
+                </div>
+            </div>
+                <form method="post" action="" class="form-inline">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="text">Description</label>
+                        <input type="text" class="form-control" name="desc">
+                      </div>
+                      <button type="submit" class="btn btn-primary btn-lg">Add to Description</button>
+                </form>
+            </div>
+        </div>
+
+{% endblock %}
